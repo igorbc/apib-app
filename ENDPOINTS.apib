@@ -1,0 +1,27 @@
+FORMAT: 1A
+HOST: http://localhost:3000
+
+# App to demonstrate API Blueprint
+Description...
+
+# Group User
+
+## Users [/users]
+### Create [POST]
++ Request (application/json; charset=utf-8)
+    + Attributes (object)
+        + user (object)
+            + name: Igor (string, required) - The user name
+            + birth_date: `1987-04-09` (string, required) - The user's birth date
++ Response 302 (application/json; charset=utf-8)
+    + Headers
+        location: http://0.0.0.0:3001/users/1
+
+## User [/users/{id}.json]
+### List [GET]
++ Parameters
+    + id: 1 (number, required) - The numerical user id
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (object)
+        + name: Igor (string, required) - The user name
+        + birth_date: `1987-04-09` (string, required) - The user's birth date
