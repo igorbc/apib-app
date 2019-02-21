@@ -6,7 +6,7 @@ RUN apt-get update -qq && apt-get install -y apt-transport-https && rm -rf /var/
 
 RUN apt-get update -qq \
     && apt-get install -y --no-install-recommends build-essential libpq-dev \
-    postgresql-client
+    postgresql-client nodejs
 
 COPY Gemfile .
 COPY Gemfile.lock .
