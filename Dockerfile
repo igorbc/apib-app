@@ -9,7 +9,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get update -qq \
     && apt-get install -y --no-install-recommends build-essential libpq-dev \
     postgresql-client nodejs cron yarn
-RUN npm install -g dredd
+RUN npm install -g dredd aglio drakov
 
 COPY Gemfile .
 COPY Gemfile.lock .
