@@ -1,0 +1,47 @@
+inherit_from: .rubocop_todo.yml
+
+
+AllCops:
+  TargetRubyVersion: 2.5.3
+  Exclude:
+    # You could specify set of files or dirs while you want to be ignored by rubocop
+    - 'bin/*'
+    - 'tmp/**/*'
+    - 'log/**/*'
+    - 'db/schema.rb'
+    - 'Gemfile.lock'
+    - 'app/helpers/**/*'
+    - 'config/puma.rb'
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'test/test_helper.rb'
+
+Style/Documentation:
+  Include:
+    - app/models/**/*
+    - lib/**/*
+
+Rails:
+  Enabled: true
+
+Metrics/BlockLength:
+  Exclude:
+    - 'app/routes/**/*'
+    - 'db/migrate/**/*'
+    - 'spec/**/*'
+    - 'config/routes.rb'
+    - 'lib/tasks/**/*'
+
+Metrics/LineLength:
+  Max: 120
+
+Naming/FileName:
+  Exclude:
+    - 'Gemfile'
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
